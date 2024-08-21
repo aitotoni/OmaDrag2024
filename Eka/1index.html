@@ -11,18 +11,22 @@
 <body>
     <div class="main-container">
         <div class="house-container">
-            <div class="window" id="window1" ondrop="drop(event)" ondragover="allowDrop(event)">khk</div>
-            <div class="window" id="window2" ondrop="drop(event)" ondragover="allowDrop(event)">lkjlkj</div>
-            <div class="window" id="window3" ondrop="drop(event)" ondragover="allowDrop(event)">lkjhil</div>
+            <div class="window" id="window1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="window" id="window2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="window" id="window3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
             <!-- Add more windows as needed -->
         </div>
         <div class="car-container" id="car-container">
             <!-- Car content, such as image or shapes -->
-	         <div class="text" id="text1" draggable="true" ondragstart="drag(event)">text1äää</div>
-             <div class="text" id="text2" draggable="true" ondragstart="drag(event)">text2ööö</div>
+	         <div class="text" id="text1" draggable="true" ondragstart="drag(event)">Rakastuminen</div>
+             <div class="text" id="text2" draggable="true" ondragstart="drag(event)">Rajojen testaus <br> Yhdessä vai erilleen kasvaminen</div>
+             <div class="text" id="text3" draggable="true" ondragstart="drag(event)">Seuralainen / kumppani</div>
+             <p id="tulos"></p>
         </div>
-        <button id="resetBtn" onclick="reset()">Reset to Original Position</button>
-
+        <!-- <button id="resetBtn" onclick="reset()">Reset to Original Position</button> -->
+        <button id="check" onclick="tarkista()"> Tarkista </button>
+        <button id="screen" onclick="suurenna('exit-fullscreen.png'); pienenna()"> <image id="kuva" src="fullscreen.png"> </image> </button>
+        <button id="volume" onclick="musiikki()"> <image src="volume.png"> </image></button>
     </div>
 </body>
 </html>

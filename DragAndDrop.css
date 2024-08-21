@@ -1,0 +1,22 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #e0e0e0; /* Grey background for better visibility */
+    font-size: 120%;
+}
+
+#main-container {
+    text-align: center;
+    border: 1px solid black;
+    margin: 5%;
+    padding: 5%;
+}
+
+a {
+    border: 1px solid black;
+    margin: 10%;
+    padding: 1%;
+    padding-left: 15%;
+    padding-right: 15%;
+}

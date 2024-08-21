@@ -16,11 +16,12 @@ body, html {
 
 .house-container {
     position: relative;
-    width: 40%; /* Adjust as necessary */
+    width: 38%; /* Adjust as necessary */
     height: 0;
     padding-bottom: 60%; /* Maintain aspect ratio */
-    background: url('house.jpg') no-repeat center center;
+    background: url('parisuhteen_kehitys.jpg') no-repeat center center;
     background-size: contain;
+    text-align: center;
 }
 
 .car-container {
@@ -35,33 +36,51 @@ body, html {
     position: absolute;
     width: 23%; /* Adjust width */
     height: 7%; /* Adjust height */
-    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white color */
+    background-color: white; /* Fully white that user could not see the answers */
     border: 2px solid #000; /* Black border for the window */
 }
 
 /* Positioning the windows on the house */
 #window1 {
-    top: 25%;
-    left: 20%;
+    top: 19%;
+    left: 11%;
 }
 
 #window2 {
-    top: 25%;
-    right: 18%;
+    top: 22%;
+    right: 14%;
+    width: 27%;
+    height: 12%;
 }
 
 #window3 {
     bottom: 25%;
-    left: 50%;
+    left: 49%;
     transform: translateX(-50%);
+    width: 30%
 }
 
 .text {
     padding: 1%;
 }
 
+#screen {
+    position: relative;
+    top: -45%;
+    right: 0%;
+    padding: 0;
+    border: none;
+    background-color: transparent
+}
 
-
+#volume {
+    position: relative;
+    top: -45%;
+    right: 3%;
+    padding: 0;
+    border: none;
+    background-color: transparent
+}
 
 /*
 
