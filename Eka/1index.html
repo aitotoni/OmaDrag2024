@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House with Windows and Car</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="drag.js"></script>
+ 
+</head>
+<body>
+    <div class="main-container">
+        <div class="house-container">
+            <div class="window" id="window1" ondrop="drop(event)" ondragover="allowDrop(event)">khk</div>
+            <div class="window" id="window2" ondrop="drop(event)" ondragover="allowDrop(event)">lkjlkj</div>
+            <div class="window" id="window3" ondrop="drop(event)" ondragover="allowDrop(event)">lkjhil</div>
+            <!-- Add more windows as needed -->
+        </div>
+        <div class="car-container" id="car-container">
+            <!-- Car content, such as image or shapes -->
+	         <div class="text" id="text1" draggable="true" ondragstart="drag(event)">text1äää</div>
+             <div class="text" id="text2" draggable="true" ondragstart="drag(event)">text2ööö</div>
+        </div>
+        <button id="resetBtn" onclick="reset()">Reset to Original Position</button>
+
+    </div>
+</body>
+</html>
