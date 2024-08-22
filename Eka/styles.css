@@ -65,9 +65,20 @@ body, html {
 }
 
 #screen {
+    display: block;
     position: relative;
     top: -45%;
-    right: 0%;
+    right: 2%;
+    padding: 0;
+    border: none;
+    background-color: transparent
+}
+
+#screen2 {
+    display: none;
+    position: relative;
+    top: -45%;
+    right: 2%;
     padding: 0;
     border: none;
     background-color: transparent

@@ -99,18 +99,41 @@ function tarkista() {
 
 var elem = document.documentElement;
 
-function suurenna(fileName) {
+function suurenna() {
+  var x = document.getElementById("screen");
+  var y = document.getElementById("screen2");
+
+  x.style.display = "none";
+  y.style.display = "block";
+
+
+
   if (elem.requestFullscreen) {
     elem.requestFullscreen();
-    let img = document.querySelector('#kuva');
-    img.setAttribute("src", fileName);
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
   }
 }
 
 function pienenna() {
+  var x = document.getElementById("screen");
+  var y = document.getElementById("screen2");
+
+  x.style.display = "block";
+  y.style.display = "none";
+
+  var x = document.getElementById("screen");
+  var y = document.getElementById("screen2");
+
   if (document.exitFullscreen) {
     document.exitFullscreen();
-  } 
+  } else if (document.webkitExitFullscreen) { /* Safari */
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) { /* IE11 */
+    document.msExitFullscreen();
+  }
 }
 
 var music = new Audio('audio/wind.mp3');
