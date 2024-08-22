@@ -27,6 +27,7 @@ body, html {
 .car-container {
     width: 40%; /* Adjust as necessary */
     height: 0;
+    text-align: center;
     padding-bottom: 30%; /* Maintain aspect ratio */
     background: url('car.jpg') no-repeat center center;
     background-size: contain;
@@ -68,7 +69,7 @@ body, html {
     display: block;
     position: relative;
     top: -45%;
-    right: 2%;
+    right: -60%;
     padding: 0;
     border: none;
     background-color: transparent
@@ -78,7 +79,7 @@ body, html {
     display: none;
     position: relative;
     top: -45%;
-    right: 2%;
+    right: -60%;
     padding: 0;
     border: none;
     background-color: transparent
@@ -87,10 +88,16 @@ body, html {
 #volume {
     position: relative;
     top: -45%;
-    right: 3%;
+    right: 0;
     padding: 0;
     border: none;
     background-color: transparent
+}
+
+#check {
+    position: relative;
+    bottom: -30%;
+    right: 25%;
 }
 
 /*

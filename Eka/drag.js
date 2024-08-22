@@ -106,8 +106,6 @@ function suurenna() {
   x.style.display = "none";
   y.style.display = "block";
 
-
-
   if (elem.requestFullscreen) {
     elem.requestFullscreen();
   } else if (elem.webkitRequestFullscreen) { /* Safari */
@@ -140,10 +138,15 @@ var music = new Audio('audio/wind.mp3');
 var isPlaying = false;
 
 function musiikki() {
+
+  const image = document.getElementById('volumekuva');
+
   if (isPlaying) {
     music.pause();
+    image.src = 'volumeon.png';
   } else {
     music.play();
+    image.src = 'no-sound.png';
   }
   isPlaying = !isPlaying;
 }
