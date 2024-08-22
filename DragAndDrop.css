@@ -14,8 +14,9 @@ body, html {
 }
 
 a {
+    display: inline-block;
     border: 1px solid black;
-    margin: 10%;
+    margin: 1%;
     padding: 1%;
     padding-left: 15%;
     padding-right: 15%;

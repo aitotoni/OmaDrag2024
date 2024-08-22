@@ -76,7 +76,8 @@ function tarkista() {
             document.getElementById("tulos").innerHTML = "Hyvin tehty.";
         }
         else  if (sessionStorage.clickcount > 3) {
-            location.href = 'file:///C:/Users/800037026/Desktop/Peli_Projekti/DragAndDrop.html';
+            sessionStorage.clickcount = 0;
+            location.href = '../DragAndDrop.html';
           
       }
         if (pisteet != 3) {
