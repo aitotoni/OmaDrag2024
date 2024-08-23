@@ -32,7 +32,6 @@ var pisteet = 0;
 
 function tarkista() {
 
-    // Yritysten määrä:
     if (sessionStorage.clickcount) {
         sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
     } 
@@ -40,63 +39,78 @@ function tarkista() {
         sessionStorage.clickcount = 1;
     }
 
-    var id1 = document.getElementById("text1");
-    var id2 = document.getElementById("text2");
-    var id3 = document.getElementById("text3");
+  let textId = [];
+  let windowID = [];
 
-    if (id1.parentNode.id == "car-container" || id2.parentNode.id == "car-container" || id3.parentNode.id == "car-container") {
-        document.getElementById("tulos").innerHTML = "Rahaa teksti kappaleet laatikkoihin!";
-    }
-    else {
-        if (id1.parentNode.id == "window1") {
-            pisteet++;
-        }
-        else if (id1.parentNode.id != "window1") {
-        }
-        if (id2.parentNode.id == "window2") {
-            pisteet++;
-        }
-        else if (id2.parentNode.id != "window2") {
-        }
-        if (id3.parentNode.id == "window3") {
-            pisteet++;
-        }
-        else if (id3.parentNode.id != "window3") {
-        }
+  document.querySelectorAll('.window').forEach(element => {
+    windowID.push(element.id);
+  });
 
-        if (pisteet == 3 && sessionStorage.clickcount <= 1) {
-            document.getElementById("tulos").innerHTML = "Sait tehtyä ensimäisellä yrityksellä, saat kaksi pistettä.";
-            opisteet = 0 + 2;
-        }
-        else  if (pisteet == 3 && sessionStorage.clickcount == 2) {
-            document.getElementById("tulos").innerHTML = "Hyvä, saat pisteen.";
-            opisteet++;
-        }
-        else  if (pisteet == 3 && sessionStorage.clickcount == 3) {
-            document.getElementById("tulos").innerHTML = "Hyvin tehty.";
-        }
-        else  if (sessionStorage.clickcount > 3) {
-            sessionStorage.clickcount = 0;
-            location.href = '../DragAndDrop.html';
-          
+  document.querySelectorAll('.text').forEach(element => {
+    textId.push(element.id);
+  });
+
+  let textElement = {};
+
+  textId.forEach((id) => {
+    textElement[id] = document.getElementById(id);
+  });
+
+  let windowElement = {};
+
+  windowID.forEach((id) => {
+    windowElement[id] = document.getElementById(id);
+  });
+
+
+  let pisteet = 0;
+  let correctPlacement = true;
+
+  textId.forEach((textId) => {
+    let textElem = textElement[textId];
+    let odotettuWindowId = textId.replace('text', 'window');
+    let windowElem = windowElement[odotettuWindowId];
+
+    if (textElem && windowElem) {
+      if (textElem.parentElement === windowElem) {
+        pisteet++;
+      } else {
+        correctPlacement = false;
       }
-        if (pisteet != 3) {
-            document.getElementById("popup").style.display = "block";
-            setTimeout(function() {document.getElementById("popup").style.display = "none";}, 5000);
-            
-
-            if (id1.parentNode.id == "window1" || id1.parentNode.id == "window2" || id1.parentNode.id == "window3") {
-              document.getElementById("car-container").appendChild(id1);
-            }
-            if (id2.parentNode.id == "window1" || id2.parentNode.id == "window2" || id2.parentNode.id == "window3") {
-              document.getElementById("car-container").appendChild(id2);
-            }
-            if (id3.parentNode.id == "window1" || id3.parentNode.id == "window2" || id3.parentNode.id == "window3") {
-              document.getElementById("car-container").appendChild(id3);
-            }
-        }
     }
+  });
+
+  let opisteet = parseInt(sessionStorage.getItem('opisteet')) || 0;
+
+  if (pisteet === windowID.length && correctPlacement) {
+    if (sessionStorage.clickcount <= 1) {
+      document.getElementById('tulos').innerHTML = "Sait tehtyä ensimmäisellä yrityksellä, saat kaksi pistettä.";
+      opisteet += 2;
+    } else if (sessionStorage.clickcount == 2) {
+      document.getElementById('tulos').innerHTML = "Hyvä, saat pisteen.";
+      opisteet++;
+    } else if (sessionStorage.clickcount == 3) {
+      document.getElementById('tulos').innerHTML = "Hyvin tehty.";
+    } else if (sessionStorage.clickcount > 3) {
+      sessionStorage.clickcount == 0;
+      location.href = '../DragAndDrop.html';
+    }
+  } else {
+    document.getElementById('popup').style.display = 'block';
+    setTimeout(() => { document.getElementById('popup').style.display = 'none'; }, 5000);
+
+    textId.forEach((textId) => {
+      let textElem = textElement[textId];
+      if (textElem && textElem.parentElement.id !== textId.replace('text', 'window')) {
+        document.getElementById('car-container').appendChild(textElem);
+      }
+    });
+  }
+
+  sessionStorage.setItem('opisteet', opisteet.toString());
 }
+
+
 
 var elem = document.documentElement;
 
