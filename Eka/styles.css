@@ -46,6 +46,7 @@ body, html {
     top: 19%;
     left: 11%;
     font-size: 1vw;
+    overflow: scroll;
 }
 
 #window2 {
@@ -53,6 +54,7 @@ body, html {
     right: 14%;
     width: 27%;
     font-size: 1vw;
+    overflow: scroll;
 }
 
 #window3 {
@@ -61,6 +63,7 @@ body, html {
     transform: translateX(-50%);
     width: 30%;
     font-size: 1vw;
+    overflow: scroll;
 }
 
 .text {
