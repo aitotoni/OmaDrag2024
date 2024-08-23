@@ -105,7 +105,7 @@ body, html {
     display: inline-block;
     padding: 15px 32px;
     bottom: -30%;
-    right: 0;
+    right: 25%;
     border: 1px solid black;
     background-color: orange;
     color: black;
@@ -117,21 +117,47 @@ body, html {
     transition-duration: 0.4s;
 }
 
+#popup {
+    color: red; 
+    text-align: center;
+    font-size: large;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #e0e0e0;
+    border: 1px solid #e0e0e0;
+    z-index: 1;
+}
 
-@media (max-width: 800px) {
+#popup img {
+    font-size: 16px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    border: solid 1px black;
+    margin: auto;
+    max-height: 24em;
+    max-width: 29em;
+}
+
+
+@media (max-width: 500px) {
+
     .main-container {
         flex-direction: column;
         align-items: center;
     }
 
     .house-container, .car-container {
-        width: 80%;             /* Increase width on smaller screens */ 
+        width: 100%;             /* Increase width on smaller screens */ 
         padding-bottom: 50%;    /* Adjust height to maintain aspect ratio */
     }
 
     .house-container {
         position: relative;
-        top: -2%;
+        top: 2%;
         width: 100%; /* Adjust as necessary */
         height: 100%;
         bottom: -10%;
@@ -154,7 +180,7 @@ body, html {
     }
 
     #window1 {
-        top: 21%;
+        top: 20%;
         font-size: 3vw;
     }
 
@@ -171,4 +197,20 @@ body, html {
     #check {
         bottom: 0;
     }
+
+    #popup {
+        top: 50%;
+        max-height: 105%;
+        max-width: 105%;
+    }
+} 
+
+
+@media (max-width: 900px) {
+    
+    #popup {
+        top: 33%;
+        max-height: 75%;
+        max-width: 75%;
+    }   
 }

@@ -81,8 +81,8 @@ function tarkista() {
           
       }
         if (pisteet != 3) {
-            // document.getElementById("popup").style.display = "block";
-            // setTimeout(function() {document.getElementById("popup").style.display = "none";}, 5000);
+            document.getElementById("popup").style.display = "block";
+            setTimeout(function() {document.getElementById("popup").style.display = "none";}, 5000);
             
 
             if (id1.parentNode.id == "window1" || id1.parentNode.id == "window2" || id1.parentNode.id == "window3") {
@@ -135,7 +135,7 @@ function pienenna() {
   }
 }
 
-var music = new Audio('audio/wind.mp3');
+var music = new Audio('wind.mp3');
 var isPlaying = false;
 
 function musiikki() {
