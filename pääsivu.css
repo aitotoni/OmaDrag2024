@@ -2,29 +2,41 @@ body, html {
     height: 100%;
     font-size: 120%;
     margin: 0;
+    font-family: 'Times New Roman', serif;
 }
 
 #tausta {
-    background-image: url('psykopeli_kansi.png');
+    background-image: url('tausta.png');
     background-repeat: no-repeat;
     background-position: center;
     height: 100%;
     width: 100%;
-    opacity: 0.7;
+    opacity: 0.6;
     z-index: 1;
+    background-size: cover;
 }
 
 ul {
     list-style-type: none;
 }  
 
+li {
+    width: 75%;
+    padding-bottom: 2%;
+    margin: 10%;
+    background-color: green;
+    border: 1px solid black;
+}
+
 #sisältö {
+    width: 100%;
     z-index: 2;
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 200px;
+    width: 300px;
     height: 200px;
     margin: -100px 0 0 -100px;
     text-align: center;
+    font-size: x-large;
 }
