@@ -93,7 +93,7 @@ function tarkista() {
       document.getElementById('tulos').innerHTML = "Hyvin tehty.";
     } else if (sessionStorage.clickcount > 3) {
       sessionStorage.clickcount == 0;
-      location.href = '../DragAndDrop.html';
+      location.href = '../main/DragAndDrop.html';
     }
   } else {
     document.getElementById('popup').style.display = 'block';
